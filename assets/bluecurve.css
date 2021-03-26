@@ -1,0 +1,68 @@
+/*Change images for backgrount and handle of slider in these rules*/
+.dynamic-slider-control {
+  position:			relative;
+  background-color:	rgb(230,230,230);
+  background-image: url("earth-sky.png");  
+  cursor:				default;
+}
+.dynamic-slider-control.horizontal .handle {
+  width: 36px;
+  height: 55px;
+  background-image: url("rocket-36x54.png");  
+  background-position: top;
+}
+
+/*Probably do not change too many things after this*/
+TR.ticks TD, TR.scaleRow TD {
+    -moz-user-select: none;
+    cursor: default;
+}
+
+TR.scaleRow TD {
+    text-align: center;
+}
+.horizontal {
+	width:				200px;
+	height:				27px;
+}
+
+.dynamic-slider-control input {
+	display:	none;
+}
+
+.dynamic-slider-control .handle {
+	position:			absolute;	
+	font-size:			1px;
+	overflow:			hidden;
+	-moz-user-select:	none;
+	cursor:				default;
+}
+.dynamic-slider-control.horizontal .handle div {}
+.dynamic-slider-control.horizontal .handle.hover {}
+
+.dynamic-slider-control .line {
+	position:			absolute;
+	overflow:			hidden;
+	border:				1px solid rgb(90,97,90);
+	background:			rgb(189,190,189);
+}
+
+.dynamic-slider-control.horizontal .line {
+	height:				2px;
+}
+
+.dynamic-slider-control .line div {
+	width:		1px;
+	height:		1px;
+	border:				1px solid;
+	border-color:		rgb(230,230,230) rgb(189,190,189)
+						rgb(189,190,189) rgb(230,230,230);
+}
+
+.slider-info {
+	padding: 7px 0 0;
+	text-align: center;
+	color: #800000;
+	font-size: 10px;
+	font-weight: normal;
+}

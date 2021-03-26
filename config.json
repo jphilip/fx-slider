@@ -1,0 +1,85 @@
+{
+    "name": "Fx Slider Module",
+    "namespace": "CANHR\\FxSlider",
+    "description": "This module allows the use of a customizable slider based on js code by Erik Arvidsson (http://webfx.eae.net/).",
+    "versions": [
+       {
+         "0.0.1": "First development version of EM."
+       }
+     ],  
+    "authors": [
+        {
+            "name": "Jacques Philip",
+            "email": "jphilip@alaska.edu",
+            "institution": "University of Alaska Fairbanks"
+        }
+    ],
+    "permissions": [
+        "redcap_survey_page_top",
+        "redcap_data_entry_form_top",
+        "redcap_every_page_top"
+    ],
+    "links": {
+        "control-center": [],
+        "project": [
+            {
+                "name": "Fx Slider Help",
+                "icon": "help",
+                "url": "config.php"
+            }
+        ]
+    },
+    "compatibility": {
+        "php-version-min": "",
+        "php-version-max": "",
+        "redcap-version-min": "9.3.0",
+        "redcap-version-max": ""
+    },
+    "project-settings": [
+        {
+            "key": "show-slider-msg",
+            "name": "Show the slider's no answer message",
+            "required": false,
+            "type": "checkbox",
+            "repeatable": false,
+            "super-users-only": false
+        },
+        {
+            "key": "slider-msg",
+            "name": "Slider's no answer message",
+            "required": false,
+            "type": "text",
+            "repeatable": false,
+            "super-users-only": false
+        },
+        {
+            "key": "css-url",
+            "name": "Url for custom css file (e.g., to customize handle and background)",
+            "required": false,
+            "type": "text",
+            "repeatable": false,
+            "super-users-only": true
+        },
+        {
+            "key": "show-textbox",
+            "name": "Show the underlying textbox for testing",
+            "required": false,
+            "type": "checkbox",
+            "repeatable": false,
+            "super-users-only": false
+        },
+        {
+            "key": "show-score",
+            "name": "Show the scores rather than the position of the slider in the textbox",
+            "required": false,
+            "type": "checkbox",
+            "repeatable": false,
+            "super-users-only": true,
+            "branchingLogic": {
+                "field": "show-textbox",
+                "op": "=",
+                "value": "1"
+            }
+        }
+    ]
+}
