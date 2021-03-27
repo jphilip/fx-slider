@@ -79,7 +79,7 @@ $(document).ready( function(){
     //if ({$this->show_slider_msg})
     //  wp.style.height = "85px";
 
-    wp.innerHTML = '<table style="width: 650px"><tbody><tr class="ticks"><td style="width:  47px;"></td><td style="width: 144px;">|</td><td style="width: 144px;">|</td><td style="width: 144px;">|</td><td style="width: 144px;">|</td><td>|</td></tr></tbody></table><div id="slider-' + qId + '" class="horizontal dynamic-slider-control slider" style="left: 1px; width: 650px; position: relative; top: 0px; height: 25px;"><input id="slider-input-' + qId + '" class="slider-input" style="width: 465px; position: relative; height: 16px"><div>&nbsp;</div>';
+    wp.innerHTML = '<table style="width: 650px"><tbody><tr class="ticks"><td style="width:  47px;"></td><td style="width: 129px;">|</td><td style="width: 144px;">|</td><td style="width: 144px;">|</td><td style="width: 144px;">|</td><td>|</td></tr></tbody></table><div id="slider-' + qId + '" class="horizontal dynamic-slider-control slider" style="left: 1px; width: 650px; position: relative; top: 0px; height: 25px;"><input id="slider-input-' + qId + '" class="slider-input" style="width: 465px; position: relative; height: 16px"><div>&nbsp;</div>';
         
     
     var s1 = new Slider(document.getElementById("slider-" + qId), document.getElementById("slider-input-" + qId), 520, 0);
@@ -100,7 +100,7 @@ $(document).ready( function(){
         if ($this->show_slider_msg)
           $("#slidermsg-" + qId).css('visibility', 'visible');
       } else {
-        fishScore = Math.ceil((fishValue-20)/(506-20)*19);
+        fishScore = Math.ceil((fishValue-20)/(520-20)*20);
         $("#slidermsg-" + qId).css('visibility', 'hidden');
       }
   

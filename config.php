@@ -67,7 +67,7 @@ the following settings:
         Be aware that if you save the record when the score is displayed, it will be saved a if it where a position,
         effectively removing the response.<br>
         The score is calculated as:<br>
-        <code>if (position < 20) score = 0 else score = Math.ceil((position-20)/(506-20)*19)</code>
+        <code>if (position < 20) score = 0 else score = Math.ceil((position-20)/(520-20)*20)</code>
     </li>
 </ul>
 
