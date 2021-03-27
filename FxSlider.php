@@ -61,7 +61,7 @@ $(document).ready( function(){
     var qId = wp.id; //Name of REDCap variable and control, id of slider wrapper 
     var redcapInput = document.getElementsByName(qId)[0];
     redcapInput.style.width = "40px";
-    redcapInput.style.marginTop = "15px";
+    // redcapInput.style.marginTop = "15px";
     
   ////// If module setting show-textbox is true, show textbox too///////////  
   ///// This was a hack for hook framework needs to be changed to an option for EM /////
@@ -75,13 +75,19 @@ $(document).ready( function(){
       var anchors = ["Not at all", "Somewhat", "A lot"];
         
     // Set height of slider wrapper
-    wp.style.height = "50px";
-    if ({$this->show_slider_msg})
-      wp.style.height = "85px";
+    //wp.style.height = "50px";
+    //if ({$this->show_slider_msg})
+    //  wp.style.height = "85px";
 
-    wp.innerHTML = '<table style="width: 650px"><tbody><tr class="ticks"><td style="width:  47px;"></td><td style="width: 144px;">|</td><td style="width: 144px;">|</td><td style="width: 144px;">|</td><td style="width: 144px;">|</td><td>|</td></tr></tbody></table><div id="slider-' + qId + '" class="horizontal dynamic-slider-control slider" style="left: 1px; width: 650px; position: relative; top: 0px; height: 25px;"><input id="slider-input-' + qId + '" class="slider-input" style="width: 465px; position: relative; height: 16px"><div>&nbsp;</div><table style="width: 650px; position: relative; left: 0px; top: 8px;"><tbody><tr class="scaleRow"><td style="width: 106px;">' + anchors[0] + '</td><td style="width: 109px;">&nbsp;</td><td>' + anchors[1] + '</td><td style="width: 103px;">&nbsp;</td><td style="width:  94px;text-align:right;padding-right:5px;">' + anchors[2] + '</td></tr><tr><td id="slidermsg-' + qId + '" class="sldrmsg opacity75" colspan="6">{$this->slider_msg}</td></tr></tbody></table>';
+    wp.innerHTML = '<table style="width: 650px"><tbody><tr class="ticks"><td style="width:  47px;"></td><td style="width: 144px;">|</td><td style="width: 144px;">|</td><td style="width: 144px;">|</td><td style="width: 144px;">|</td><td>|</td></tr></tbody></table><div id="slider-' + qId + '" class="horizontal dynamic-slider-control slider" style="left: 1px; width: 650px; position: relative; top: 0px; height: 25px;"><input id="slider-input-' + qId + '" class="slider-input" style="width: 465px; position: relative; height: 16px"><div>&nbsp;</div>';
         
+    
     var s1 = new Slider(document.getElementById("slider-" + qId), document.getElementById("slider-input-" + qId), 520, 0);
+
+    var anchorTab = document.createElement('table');
+    anchorTab.innerHTML = '<tbody><tr class="scaleRow"><td style="width: 106px;">' + anchors[0] + '</td><td style="width: 109px;">&nbsp;</td><td colspan="2">' + anchors[1] + '</td><td style="width: 103px;">&nbsp;</td><td style="width:  94px;text-align:right;padding-right:5px;">' + anchors[2] + '</td></tr><tr><td id="slidermsg-' + qId + '" class="sldrmsg opacity75" colspan="6">{$this->slider_msg}</td></tr></tbody>';
+    anchorTab.style = "width: 650px; position: relative; left: 0px; top: 8px;"
+    wp.insertAdjacentElement('afterend', anchorTab);
     
     if (redcapInput.value == '')
       redcapInput.value = 0;
@@ -92,10 +98,10 @@ $(document).ready( function(){
       if (fishValue < 20) {
         fishScore = 0;
         if ($this->show_slider_msg)
-          $("#slidermsg-" + qId).show();
+          $("#slidermsg-" + qId).css('visibility', 'visible');
       } else {
         fishScore = Math.ceil((fishValue-20)/(506-20)*19);
-        $("#slidermsg-" + qId).hide();
+        $("#slidermsg-" + qId).css('visibility', 'hidden');
       }
   
   ///////Show score to test, but value (slider position) in production)////////
