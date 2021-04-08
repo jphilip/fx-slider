@@ -53,6 +53,14 @@
             "super-users-only": false
         },
         {
+            "key": "default-anchors",
+            "name": "Slider's default anchors",
+            "required": false,
+            "type": "text",
+            "repeatable": false,
+            "super-users-only": false
+        },
+        {
             "key": "css-url",
             "name": "Url for custom css file (e.g., to customize handle and background)",
             "required": false,

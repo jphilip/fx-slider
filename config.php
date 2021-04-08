@@ -52,6 +52,10 @@ the following settings:
         Message displayed when when the slider is in the no answer zone.<br>
         Defaults to "Move the slider out of the left box to set a response".
     </li>
+    <li>Slider's default anchors:<br>
+        Anchors displayed by default when when not specified for a field.<br>
+        Defaults to "Not at all|Somewhat|A lot".
+    </li>
     <li>Url for custom css file (e.g., to customize handle and background): (Admin only)<br>
         This would be the URL of a css file on the server which would reference custom graphics, colors... to change the
         slider's aspect.

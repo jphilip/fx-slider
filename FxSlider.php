@@ -17,6 +17,7 @@ class FxSlider extends \ExternalModules\AbstractExternalModule
   private $show_score;
   private $show_slider_msg;
   private $slider_msg;
+  private $default_anchors;
   
   
   function __construct()
@@ -47,6 +48,9 @@ class FxSlider extends \ExternalModules\AbstractExternalModule
     $this->slider_msg = $this->getProjectSetting("slider-msg");
     if (empty($this->slider_msg))
       $this->slider_msg = "Move the slider out of the left box to set a response";
+    $this->default_anchors = $this->getProjectSetting("default-anchors");
+    if (empty($this->default_anchors))
+      $this->default_anchors = "Not at all|Somewhat|A lot";
 
     $str = <<<"EOT"
 
@@ -72,7 +76,7 @@ $(document).ready( function(){
     if (el)
       var anchors = el.value.split("|");
     else
-      var anchors = ["Not at all", "Somewhat", "A lot"];
+      var anchors = "{$this->default_anchors}".split("|");
         
     // Set height of slider wrapper
     //wp.style.height = "50px";
