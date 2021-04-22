@@ -17,6 +17,7 @@ class FxSlider extends \ExternalModules\AbstractExternalModule
   private $show_score;
   private $show_slider_msg;
   private $slider_msg;
+  private $slider_msg2;
   private $default_anchors;
   
   
@@ -48,6 +49,9 @@ class FxSlider extends \ExternalModules\AbstractExternalModule
     $this->slider_msg = $this->getProjectSetting("slider-msg");
     if (empty($this->slider_msg))
       $this->slider_msg = "Move the slider out of the left box to set a response";
+    $this->slider_msg2 = $this->getProjectSetting("slider-msg2");
+    if (empty($this->slider_msg2))
+      $this->slider_msg2 = "&nbsp;";
     $this->default_anchors = $this->getProjectSetting("default-anchors");
     if (empty($this->default_anchors))
       $this->default_anchors = "Not at all|Somewhat|A lot";
@@ -65,6 +69,7 @@ $(document).ready( function(){
     var qId = wp.id; //Name of REDCap variable and control, id of slider wrapper 
     var redcapInput = document.getElementsByName(qId)[0];
     redcapInput.style.width = "40px";
+    redcapInput.readOnly = true;
     // redcapInput.style.marginTop = "15px";
     
   ////// If module setting show-textbox is true, show textbox too///////////  
@@ -101,11 +106,20 @@ $(document).ready( function(){
       fishValue = s1.getValue();
       if (fishValue < 20) {
         fishScore = 0;
-        if ($this->show_slider_msg)
+        if ($this->show_slider_msg) {         
+          $("#slidermsg-" + qId).html("$this->slider_msg");
           $("#slidermsg-" + qId).css('visibility', 'visible');
+        } else {
+          $("#slidermsg-" + qId).css('visibility', 'hidden');
+        }
       } else {
         fishScore = Math.ceil((fishValue-20)/(520-20)*20);
-        $("#slidermsg-" + qId).css('visibility', 'hidden');
+        if ($this->show_slider_msg) {
+          $("#slidermsg-" + qId).html("$this->slider_msg2");
+          $("#slidermsg-" + qId).css('visibility', 'visible');
+        } else {
+          $("#slidermsg-" + qId).css('visibility', 'hidden');
+        }
       }
   
   ///////Show score to test, but value (slider position) in production)////////

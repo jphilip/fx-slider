@@ -53,6 +53,14 @@
             "super-users-only": false
         },
         {
+            "key": "slider-msg2",
+            "name": "Slider's answer message",
+            "required": false,
+            "type": "text",
+            "repeatable": false,
+            "super-users-only": false
+        },
+        {
             "key": "default-anchors",
             "name": "Slider's default anchors",
             "required": false,

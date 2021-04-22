@@ -52,6 +52,10 @@ the following settings:
         Message displayed when when the slider is in the no answer zone.<br>
         Defaults to "Move the slider out of the left box to set a response".
     </li>
+    <li>Slider's answer message:<br>
+        Message displayed when when the slider is in the answer zone.<br>
+        Defaults to "".
+    </li>
     <li>Slider's default anchors:<br>
         Anchors displayed by default when when not specified for a field.<br>
         Defaults to "Not at all|Somewhat|A lot".
