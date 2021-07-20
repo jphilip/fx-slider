@@ -98,10 +98,7 @@ $(document).ready( function(){
     anchorTab.style = "width: 650px; position: relative; left: 0px; top: 8px;"
     wp.insertAdjacentElement('afterend', anchorTab);
     
-    if (redcapInput.value == '')
-      redcapInput.value = 0;
-    s1.setValue(redcapInput.value);
-  
+    
     s1.onchange = function () {
       fishValue = s1.getValue();
       if (fishValue < 20) {
@@ -121,10 +118,14 @@ $(document).ready( function(){
           $("#slidermsg-" + qId).css('visibility', 'hidden');
         }
       }
-  
-  ///////Show score to test, but value (slider position) in production)////////
+      
+      ///////Show score to test, but value (slider position) in production)////////
       redcapInput.value = !{$this->show_score} ? fishValue : fishScore;
     };
+    
+    if (redcapInput.value == '')
+      redcapInput.value = 0;
+    s1.setValue(redcapInput.value);
 
     // Hide slider message at first if set up that way
     if (!{$this->show_slider_msg})
