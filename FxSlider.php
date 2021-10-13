@@ -94,7 +94,7 @@ $(document).ready( function(){
     var s1 = new Slider(document.getElementById("slider-" + qId), document.getElementById("slider-input-" + qId), 520, 0);
 
     var anchorTab = document.createElement('table');
-    anchorTab.innerHTML = '<tbody><tr class="scaleRow"><td style="width: 106px;">' + anchors[0] + '</td><td style="width: 109px;">&nbsp;</td><td colspan="2">' + anchors[1] + '</td><td style="width: 103px;">&nbsp;</td><td style="width:  94px;text-align:right;padding-right:5px;">' + anchors[2] + '</td></tr><tr><td id="slidermsg-' + qId + '" class="sldrmsg opacity75" colspan="6">{$this->slider_msg}</td></tr></tbody>';
+    anchorTab.innerHTML = '<tbody><tr class="scaleRow"><td style="width: 106px;">' + anchors[0] + '</td><td style="width: 109px;">&nbsp;</td><td colspan="2">' + anchors[1] + '</td><td style="width: 103px;">&nbsp;</td><td style="width:  94px;text-align:right;padding-right:5px;">' + anchors[2] + '</td></tr><tr><td id="slidermsg-' + qId + '" class="sldrmsg" colspan="6">{$this->slider_msg}</td></tr></tbody>';
     anchorTab.style = "width: 650px; position: relative; left: 0px; top: 8px;"
     wp.insertAdjacentElement('afterend', anchorTab);
     
